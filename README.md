@@ -41,7 +41,7 @@ However, most Quarto templates load it automatically.
 
 ## Usage
 
-The shortcodes provides are:
+The shortcodes provided are:
 
 | Shortcode                   | Purpose                     | Description                                                             |
 | --------------------------- | --------------------------- | ----------------------------------------------------------------------- |
