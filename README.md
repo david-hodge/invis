@@ -14,7 +14,7 @@ In PDF the text is merely changed to white. This could be an issue if you have a
 
 ---
 
-The PDF white text approach is more robust to large quantities of hidden text.\
+The PDF white text approach is more robust to large quantities of hidden text.
 
 In HTML you may need to specify `block` to force a larger block of hidden content with 
 
