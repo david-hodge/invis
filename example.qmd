@@ -1,0 +1,97 @@
+---
+title: "Invis Example"
+invis: tru
+format:
+  html: default
+  pdf: default
+      
+---
+
+## Heading
+
+Some random text.
+
+{{< invis start >}}
+This text will be hidden.
+{{< invis end >}} 
+
+Some more random text.
+
+This time we're missing text in{{< invis start >}} the middle of{{< invis end >}} a sentence.
+
+Now for some improper integrals.
+
+Equation 1:
+$$
+\int_0^\infty x^2 \;\text{d}x
+$$
+
+Equation 2a: (totally hidden, inline as a single equation)
+
+{{< invis start >}}
+$$
+\int_0^\infty x^2 \;\text{d}x
+$$
+{{< invis end >}}
+
+Equation 2b: (totally hidden, block, note blank lines)
+
+{{< invis start block >}}
+
+$$
+\int_0^\infty x^2 \;\text{d}x
+$$
+
+{{< invis end block >}}
+
+
+You can't make parts of an equation disappear by these same methods. So if you really have to then use commands like `\phantom`.
+
+Equation 3: (x missing using phantom)
+$$
+\int_0^\infty \phantom{x}^2 \;\text{d}x
+$$
+Equation 4: back to normal
+$$
+\int_0^\infty x^2 \;\text{d}x
+$$
+
+:::{.callout-tip}
+
+## Name
+
+Here's a tip
+:::
+
+Next a box with invisible content. Likely not useful but illustrates that larger blocks of hidden content must use the `block` parameter.
+
+{{< invis start block >}}
+
+:::{.callout-tip}
+
+## Name
+
+Here's a tip
+:::
+ 
+{{< invis end block >}}
+
+:::{.callout-tip}
+
+## Incorrect attempt
+
+{{< invis start >}}The content here is totally hidden. It can even go on for multiple lines.
+
+However if there are new paragraphs then you need to wrap in a block. Without `block` only the next fundamental element of content will be hidden. This likely works fine in the PDF either way.{{< invis end >}}
+:::
+
+:::{.callout-tip}
+
+## Better attempt
+
+{{< invis start block>}}
+The content here is totally hidden. It can even go on for multiple lines.
+
+However if there are new paragraphs then you need to wrap in a block. Without `block` only the next fundamental element of content will be hidden. This likely works fine in the PDF either way
+{{< invis end block >}}
+:::
