@@ -47,6 +47,10 @@ However, most Quarto templates load it automatically.
 
 ## Usage
 
+In the example file `invis: debug` has been set in the metadata to show the hidden text in red when first run.
+
+Just **delete** the `invis` data, or set to `true` to enable hiding.
+
 The shortcodes provided are:
 
 | Shortcode                   | Purpose                     | Description                                                             |
@@ -95,6 +99,12 @@ invis: false
 ```
 in the metadata of your file (or project). Any other value than `false` will result in hidden text.
 
+As mentioned above a `debug` setting has been provided via
+
+```
+invis: debug
+```
+which sets all hidden text to red, for testing purposes.
 ## Example
 
 Here is the source code for a fairly minimal example: [example.qmd](example.qmd).
