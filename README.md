@@ -35,6 +35,7 @@ For PDF/LaTeX, ensure `xcolor` is loaded if your template doesn’t already incl
 header-includes: |
   \usepackage{xcolor}
 ```
+inside the format.pdf yaml tree.
 
 However, most Quarto templates load it automatically.
 
