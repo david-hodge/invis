@@ -1,4 +1,4 @@
-# Invis Extension For Quarto
+# Invis Shortcode Extension For Quarto
 
 ## Overview
 
