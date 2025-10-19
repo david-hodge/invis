@@ -49,7 +49,7 @@ However, most Quarto templates load it automatically.
 
 In the example file `invis: debug` has been set in the metadata to show the hidden text in red when first run.
 
-Just **delete** the `invis` data, or set to `true` to enable hiding.
+Just **delete** the entire `invis` metadata row, or set to `true` to enable hiding. *In fact anything except `false` and `debug` will work.*
 
 The shortcodes provided are:
 
