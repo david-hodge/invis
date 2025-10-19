@@ -5,6 +5,13 @@
   opacity: 0 !important;
 }
 
+.invisible-text-debug {
+  color: red !important;           /* or whatever highlight color */
+  border: 1px dashed red;
+  background-color: #ffeeee;
+}
+
+
 /* Trick to hide from non-screenreaders */
 .sr-only {
   position: absolute;

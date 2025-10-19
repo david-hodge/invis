@@ -62,10 +62,22 @@ end
 
 return {
   ['invis'] = function(args, kwargs, meta, raw_args, context)
-    -- Check for a meta variable to disable invisibility
-    local disable = meta and meta["invis"]
-    if disable == false or (type(disable) == "string" and utils.stringify(disable):lower() == "false") then
+    -- Check for a meta variable to disable invisibility, or enter debug mode
+    local meta_invis_raw = meta and meta["invis"]
+    local meta_invis_str = meta_invis_raw and utils.stringify(meta_invis_raw):lower() or nil
+    
+    local class_name = "invisible-text"  -- default class
+    
+    if meta_invis_str == false or (type(meta_invis_str) == "string" and utils.stringify(meta_invis_str):lower() == "false") then
       return pandoc.Null() -- Do nothing, ignore shortcodes entirely
+    elseif type(meta_invis_str) == "string" and utils.stringify(meta_invis_str):lower() == "debug" then
+      class_name = "invisible-text-debug"
+    end
+    
+    -- Determine color for PDF/LaTeX
+    local pdf_colour = "white"  -- default
+    if meta_invis_str == "debug" then
+      pdf_colour = "red" -- default debug PDF colour
     end
 
     -- Read first argument (start / end)
@@ -97,8 +109,8 @@ return {
     if is_html then
       if param == "start" then
         local open_tag = is_block 
-          and '<div class="invisible-text" aria-label="' .. aria_note .. '">' 
-          or '<span class="invisible-text" aria-label="' .. aria_note .. '">' 
+          and '<div class="'..class_name..'" aria-label="'..aria_note..'">' 
+          or '<span class="'..class_name..'" aria-label="'..aria_note..'">' 
         return html_output(open_tag, sr_start)
       elseif param == "end" then
         local close_tag = is_block and '</div>' or '</span>'
@@ -110,7 +122,7 @@ return {
     -- PDF/LaTeX
     elseif is_pdf then
       if param == "start" then
-        return pandoc.RawInline("tex", "\\begingroup\\color{white}")
+        return pandoc.RawInline("tex", "\\begingroup\\color{"..pdf_colour.."}")
       elseif param == "end" then
         return pandoc.RawInline("tex", "\\endgroup")
       else

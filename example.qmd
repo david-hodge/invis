@@ -1,10 +1,6 @@
 ---
 title: "Invis Example"
-invis: tru
-format:
-  html: default
-  pdf: default
-      
+invis: debug # or false, or true/anything else
 ---
 
 ## Heading
