@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Quarto extension provides a shortcode to hide content visually while preserving layout and accessibility:
+This Quarto extension provides a shortcode to hide content visually while preserving layout and accessibility. The purpose is primarily for producing teaching materials with gaps. Here's a summary:
 
 - **HTML:** content is wrapped in `<span>` (inline) or `<div>` (block).  
 - **PDF/LaTeX:** content is wrapped in `\begingroup\color{white} ... \endgroup`.  
@@ -64,8 +64,9 @@ This will hide the content between the `invis start` and `invis end` shortcodes.
 
 ### Block usage
 
-For larger elements, where wrapping with a <div> is needed, you need to specify `block` as well.
+For larger elements, where wrapping with a `<div>` is needed, you need to specify `block` as well.
 
+```
 {{< invis start block >}}
 
 :::{.callout-tip}
@@ -79,8 +80,9 @@ $$
 :::
 
 {{< invis end block >}}
+```
 
-In this case the tip block will stil be rendered but all the content will be hidden.
+In this case the tip block itself (display-wise) will still be rendered but all its content will be hidden.
 
 The `block` method is required whenever the content contains more than one paragraph, for example.
 
