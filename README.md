@@ -16,7 +16,13 @@ In PDF the text is merely changed to white. This could be an issue if you have a
 
 The PDF white text approach is more robust to large quantities of hidden text.
 
-In HTML you may need to specify `block` to force a larger block of hidden content with 
+In HTML you may need to specify `block` to force a larger block of hidden content with.
+
+---
+
+## Accessiblity features
+
+For readers navigating the HTML document with a screen, the container for the hidden text has an aria-label added informing the reader that the text to follow is visibly hidden. An additional line of text is also read at the start and end of the hidden block, to signify where the hidden text ends. The precise text can be found near the top of the `invis.lua` file.
 
 ## Installing
 
@@ -54,7 +60,7 @@ The shortcodes provided are:
 
 This is {{< invis start >}}hidden text{{< invis end >}} inline.
  
-This will hide the content between the `invis start` and `invis end` shortcodes. It works by surrounding the content with an HTML <span>, or in PDF toggling text to white.
+This will hide the content between the `invis start` and `invis end` shortcodes. It works by surrounding the content with an HTML `<span>`, or in PDF toggling text to white.
 
 ### Block usage
 
