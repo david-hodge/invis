@@ -22,7 +22,7 @@ In HTML you may need to specify `block` to force a larger block of hidden conten
 
 ## Accessiblity features
 
-For readers navigating the HTML document with a screen, the container for the hidden text has an aria-label added informing the reader that the text to follow is visibly hidden. An additional line of text is also read at the start and end of the hidden block, to signify where the hidden text ends. The precise text can be found near the top of the `invis.lua` file.
+For readers navigating the HTML document with a screenreader, the container for the hidden text has an aria-label added informing the reader that the text to follow is visibly hidden. An additional line of text is also read at the start and end of the hidden block, to signify where the hidden text ends. The precise text can be found near the top of the `invis.lua` file.
 
 ## Installing
 
