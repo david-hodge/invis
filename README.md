@@ -10,7 +10,7 @@ This Quarto extension provides a shortcode to hide content visually while preser
 
 In HTML the content is set to transparent with opacity 0, along with being set to unselectable.
 
-In PDF the text is merely changes to white. This could be an issue if you have a coloured background.
+In PDF the text is merely changed to white. This could be an issue if you have a coloured background.
 
 ---
 
